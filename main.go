@@ -190,7 +190,10 @@ func NewGame() *Game {
 
 // Init method
 func (g *Game) init() {
-	g.hiscore = g.score
+	// Update hiscore
+	if g.hiscore < g.score {
+		g.hiscore = g.score
+	}
 	g.count = 0
 	g.score = 0
 	g.lastTreeX = 0
